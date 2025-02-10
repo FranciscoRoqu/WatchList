@@ -1,9 +1,64 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0" version="26.0.11">
   <diagram name="Page-1" id="6v1nwvxj3DgR7qxhJRcI">
-    <mxGraphModel>
+    <mxGraphModel dx="840" dy="388" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.938;entryY=0.713;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="fMESIwGdxRzH-z3tzm5s-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="217" as="sourcePoint" />
+            <mxPoint x="380" y="217" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-1" value="WatchList DB" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="490" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-3" target="fMESIwGdxRzH-z3tzm5s-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-3" value="Utilizador" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-7" target="fMESIwGdxRzH-z3tzm5s-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="180" />
+              <mxPoint x="450" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-7" target="fMESIwGdxRzH-z3tzm5s-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-7" value="Main" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-9" target="fMESIwGdxRzH-z3tzm5s-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-9" value="Criar tabelas" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="300" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-29" value="Operação CRUD" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="320" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-32" target="fMESIwGdxRzH-z3tzm5s-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-32" value="Tabela a alterar" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="480" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.12;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fMESIwGdxRzH-z3tzm5s-34" target="fMESIwGdxRzH-z3tzm5s-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fMESIwGdxRzH-z3tzm5s-34" value="&lt;div&gt;Operação CRUD&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="640" width="80" height="80" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
