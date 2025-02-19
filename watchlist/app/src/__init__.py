@@ -11,6 +11,7 @@ from src.drop.drop_animes import drop_animes
 from src.update.update_visualizadores import update_visualizadores
 from src.update.update_animes import update_animes
 from src.innerjoin.innerjoin_visualizadores_animes import innerjoin_visualizadores_animes
+from src.connection import close
 
 __all__ = [
     'create_visualizadores',
@@ -25,5 +26,6 @@ __all__ = [
     'drop_animes',
     'update_visualizadores',
     'update_animes',
-    'innerjoin_visualizadores_animes'
+    'innerjoin_visualizadores_animes',
+    'close'
 ]
