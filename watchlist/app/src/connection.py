@@ -1,13 +1,11 @@
 import sqlite3
-def connect():
-    connection = sqlite3.connect('sqlite-database/watchlist.db')
-    return connection
+connection = sqlite3.connect('sqlite-database/watchlist.db')
 
 def cursor():
-    return connect().cursor()
+    return connection.cursor()
 
 def commit():
-    return connect().commit()
+    return connection.commit()
 
 def close():
-    return connect().close() 
+    return connection.close() 
