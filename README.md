@@ -60,7 +60,7 @@ A base de dados SQLite `watchlist.db` consiste nas seguintes tabelas:
 1. **visualizadores**
    - `id` (INTEGER, Chave Primária)
    - `nome_visualizador` (TEXT, Obrigatório)
-   - `idade_visualizador` (INTEGER, Chave Estrangeira para a tabela `roles`) ##############
+   - `idade_visualizador` (INTEGER, Obrigatório)
    - `animes` (TEXT, Chave Estrangeira para a tabela `animes`)
 
 2. **animes**
