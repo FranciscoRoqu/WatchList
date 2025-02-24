@@ -7,7 +7,7 @@ O projeto feito com Python, SQLite e InquirerPy.
 ## Estrutura do Projeto
 
 A estrutura do diretório está organizada da seguinte forma:
-
+```
 watchlist
 |
 ├───app
@@ -51,8 +51,7 @@ watchlist
 |
 |
 |───README.md   # Documentação do projeto
-
-
+```
 
 ## Esquema da Base de Dados
 
