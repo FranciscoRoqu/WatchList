@@ -1,5 +1,5 @@
 def read_visualizadores():
-    from src.connection import cursor,close
+    from src.connection import cursor
 
     cur = cursor()
 
@@ -9,8 +9,3 @@ def read_visualizadores():
     
     for visualizador in resultados:
         print(visualizador)
-
-    close()
-
-
-read_visualizadores()

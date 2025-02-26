@@ -8,7 +8,7 @@ def insert_visualizador():
     nome = inquirer.text(message="Introduza o nome do visualizador: ", validate=EmptyInputValidator(message="Por fazor introduza um valor")).execute()
     idade = inquirer.text(message=f'Introduza a idade do visualizador "{nome}": ', validate=NumberValidator(message="Por favor introduza um número")).execute()
     
-    # cur.execute("INSERT INTO animes (nome_visualizador, idade_visualizador) VALUES (?, ?)", (nome, idade))
+    cur.execute("INSERT INTO visualizadores (nome_visualizador, idade_visualizador) VALUES (?, ?)", (nome, idade))
 
     commit()
     close()

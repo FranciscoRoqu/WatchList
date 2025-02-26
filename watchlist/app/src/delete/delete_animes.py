@@ -6,8 +6,16 @@ def delete_animes():
     from src.connection import cursor,commit,close
     cur = cursor()
 
-    nome = inquirer.text(message="Introduza o nome do anime: ", validate=EmptyInputValidator(message="Por fazor introduza um valor")).execute()
-    cur.execute("DELETE FROM animes WHERE anime = ?", (nome))
+    cur.execute("SELECT id, anime FROM animes")
+    animes = cur.fetchall()
+    animes_para_apagar = inquirer.fuzzy(
+        message="Selecione os animes que deseja apagar: ",
+        choices=animes,
+        multiselect=True,
+        validate=lambda resultado: len(resultado) >= 1,
+        invalid_message="Por favor selecione um valor",
+        instruction="Use as setas para navegar, TAB para selecionar e ENTER para confirmar."
+    ).execute()
 
     commit()
     close()

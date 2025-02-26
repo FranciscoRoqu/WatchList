@@ -1,4 +1,5 @@
 import sqlite3
+
 connection = sqlite3.connect('sqlite-database/watchlist.db')
 
 def cursor():
