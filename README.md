@@ -31,6 +31,9 @@ watchlist
 |    |    │   └───drop_visualizadores.py   # Remove a tabela `visualizadores`
 |    |    |   └───drop_animes.py           # Remove a tabela `animes`
 |    |    |
+|    |    ├───innerjoin
+|    |    │   └───innerjoin_visualizadores_animes.py   # Junta as tabelas `visualizadores` e `animes`
+|    |    |
 |    |    ├───insert
 |    |    │   └───insert_visualizador.py   # Insere registos na tabela `visualizadores`
 |    |    |   └───insert_anime.py          # Insere registos na tabela `animes`
@@ -60,24 +63,23 @@ A base de dados SQLite `watchlist.db` consiste nas seguintes tabelas:
 1. **visualizadores**
    - `id` (INTEGER, Chave Primária)
    - `nome_visualizador` (TEXT, Obrigatório)
-   - `idade_visualizador` (INTEGER, Chave Estrangeira para a tabela `roles`) ##############
-   - `animes` (TEXT, Chave Estrangeira para a tabela `animes`)
+   - `idade_visualizador` (INTEGER, Obrigatório) 
 
 2. **animes**
    - `id` (INTEGER, Chave Primária)
    - `anime` (TEXT, Obrigatório)
-   - `genero` (TEXT, Obrigatório)
    - `episodios` (INTEGER, Obrigatório)
-   - `visualizadores` (TEXT, Chave Estrangeira para a tabela `visualizadores`)
+   - `genero` (TEXT, Obrigatório)
+   - `ep_atual` (INTEGER, Obrigatório) **preenchido automáticamente (não é autoincrementado)**
 
 ## Funcionalidades
 
 - **Criação de tabelas:** Cria automaticamente as tabelas `visualizadores` e `animes`, caso ainda não existam.
-- **Inserção de dados:** Permite adicionar registros manualmente em todas as tabelas.
+- **Inserção de dados:** Permite adicionar registos manualmente em todas as tabelas.
 - **Consulta de dados:** Realiza consultas SELECT para:
-  - Buscar todos os animes na watchlist.
+  - Procurar todos os animes na watchlist.
   - Realizar joins entre tabelas para obter detalhes combinados.
-  - buscar todos os visualizadores.
+  - Procurar todos os visualizadores.
 - **Exclusão de dados:** Remove registos específicos das tabelas `visualizadores` e `animes`.
 - **Atualização de dados:** Atualiza campos existentes nas tabelas `visualizadores` e `animes`.
 
@@ -107,17 +109,19 @@ A base de dados SQLite `watchlist.db` consiste nas seguintes tabelas:
 - **`insert_visualizadores.py`:** Insere dados na tabela `visualizadores`.
 - **`insert_anime.py`:** Insere dados na tabela `animes`.
 
-- **`read_visualizador.py`:** Le os dados da tabela `visualizadores`.
-- **`read_animes.py`:** Le os dados da tabela `animes`.
+- **`read_visualizador.py`:** Lê os dados da tabela `visualizadores`.
+- **`read_animes.py`:** Lê os dados da tabela `animes`.
 
 - **`update_visualizadores.py`:** Atualiza dados na tabela `visualizadores`.
 - **`update_animes.py`:** Atualiza dados na tabela `animes`.
 
-- **`delete_visualizadores.py`:** Remove registros na tabela `visualizadores`.
-- **`delete_animes.py`:** Remove registros na tabela `animes`.
+- **`delete_visualizadores.py`:** Remove registos na tabela `visualizadores`.
+- **`delete_animes.py`:** Remove registos na tabela `animes`.
 
 - **`drop_visualizadores.py`:** Remove a tabela `visualizadores` da base de dados.
 - **`drop_animes.py`:** Remove a tabela `animes` da base de dados.
+
+- **`innerjoin_visualizadores_animes.py`:** Junta as duas tabelas para uma melhor leitura.
 
 ## Exemplos de Consultas
 
