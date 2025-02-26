@@ -31,6 +31,9 @@ watchlist
 |    |    │   └───drop_visualizadores.py   # Remove a tabela `visualizadores`
 |    |    |   └───drop_animes.py           # Remove a tabela `animes`
 |    |    |
+|    |    ├───innerjoin
+|    |    │   └───innerjoin_visualizadores_animes.py   # Junta as tabelas `visualizadores` e `animes`
+|    |    |
 |    |    ├───insert
 |    |    │   └───insert_visualizador.py   # Insere registos na tabela `visualizadores`
 |    |    |   └───insert_anime.py          # Insere registos na tabela `animes`
@@ -60,14 +63,14 @@ A base de dados SQLite `watchlist.db` consiste nas seguintes tabelas:
 1. **visualizadores**
    - `id` (INTEGER, Chave Primária)
    - `nome_visualizador` (TEXT, Obrigatório)
-   - `idade_visualizador` (INTEGER, Obrigatório)
+   - `idade_visualizador` (INTEGER, Obrigatório) 
 
 2. **animes**
    - `id` (INTEGER, Chave Primária)
    - `anime` (TEXT, Obrigatório)
-   - `genero` (TEXT, Obrigatório)
    - `episodios` (INTEGER, Obrigatório)
-   - `ep_atual` (INTEGER)
+   - `genero` (TEXT, Obrigatório)
+   - `ep_atual` (INTEGER, Obrigatório) **preenchido automáticamente (não é autoincrementado)**
 
 ## Funcionalidades
 
@@ -117,6 +120,8 @@ A base de dados SQLite `watchlist.db` consiste nas seguintes tabelas:
 
 - **`drop_visualizadores.py`:** Remove a tabela `visualizadores` da base de dados.
 - **`drop_animes.py`:** Remove a tabela `animes` da base de dados.
+
+- **`innerjoin_visualizadores_animes.py`:** Junta as duas tabelas para uma melhor leitura.
 
 ## Exemplos de Consultas
 
