@@ -6,11 +6,14 @@ def create_animes():
     
     cur.execute('''
         CREATE TABLE IF NOT EXISTS animes(
-            id         INTEGER PRIMARY KEY AUTOINCREMENT,
-            anime      TEXT    NOT NULL,
-            episodios  INTEGER NOT NULL,
-            genero     TEXT    NOT NULL,
-            ep_atual   INTEGER NOT NULL
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            anime        TEXT    NOT NULL,
+            episodios    INTEGER NOT NULL,
+            genero       TEXT    NOT NULL,
+            ep_atual     INTEGER NOT NULL,
+            visualizador INTEGER NOT NULL,
+                
+            FOREIGN KEY (visualizador) REFERENCES visualizadores(id)
     )
     ''')
     
