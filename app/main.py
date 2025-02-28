@@ -2,6 +2,9 @@ from src import *
 from InquirerPy import inquirer
 from InquirerPy.base.control import Choice
 from InquirerPy.separator import Separator
+from InquirerPy.validator import EmptyInputValidator
+
+
 def create_tabelas():
     create_animes()
     create_visualizadores()
@@ -22,9 +25,11 @@ while True:
     match input:
         case "Procurar" | "Apagar":
             choices.append("Tudo")
-    if input != None:
+    if input is not None:
         answerInput = inquirer.select(message=f'O que deseja {input.lower()}:', 
-                                      choices=choices, 
+                                      choices=choices,
+                                      validate=EmptyInputValidator,
+                                      invalid_message="Por favor selecione um valor",
                                       default=None).execute()
     match input:
         case "Inserir":
