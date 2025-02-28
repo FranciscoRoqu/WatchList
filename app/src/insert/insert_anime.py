@@ -8,7 +8,7 @@ def insert_anime():
     cur.execute("SELECT COUNT(*) FROM visualizadores")
     resultados = cur.fetchone()
     if resultados[0] == 0:
-        print("É necessário existir pelo menu 1 visualizador para poder criar um anime")
+        print("   É necessário existir pelo menu 1 visualizador para poder criar um anime")
         return
     
     nome = inquirer.text(message="Introduza o nome do anime: ", validate=EmptyInputValidator(message="Por fazor introduza um valor")).execute()
