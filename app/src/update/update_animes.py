@@ -24,13 +24,61 @@ def update_animes():
                                     default=str(anime_atual[2]),
                                     validate=NumberValidator()).execute()
 
+    generos = []
+    with open("generos.txt", "r") as ficheiro:
+        generos_total = ficheiro.readline()
+        generos = generos_total.split(",")
+        if generos[len(generos) - 1] == "":
+            generos.pop()
+
+    novos_generos = inquirer.fuzzy(
+        message="Selecione os novos géneros do anime:",
+        choices=generos,
+        multiselect=True,
+        validate=EmptyInputValidator,
+        invalid_message="Por favor selecione um valor",
+        instruction="Use as setas para navegar, TAB para selecionar e ENTER para confirmar."
+    ).execute()
+
+    genero_formatado = ""
+    for valor in novos_generos:
+        genero_formatado = genero_formatado + valor + ", "
+    novo_genero_formatado = genero_formatado[:-2]
+    cur.execute("SELECT id, nome_visualizador FROM visualizadores")
+
+    visualizadores = cur.fetchall()
+    escolhas = []
+    for valor in visualizadores:
+        visualizador_formatado = str(valor[0]) + "-> " + str(valor[1])
+        escolhas.append(visualizador_formatado)
+    novo_visualizador = inquirer.select(message="Selecione o novo visualizador a quem atribuir este anime: ",
+                                        choices = escolhas,
+                                        validate=EmptyInputValidator,
+                                        invalid_message="Por favor selecione um valor").execute()
+    visualizador_split = novo_visualizador.split(">")
+    novo_episodio_atual = inquirer.text(message="Em que episódio de " + novo_nome + " está o" + visualizador_split[1] + ":",
+                                        validate=NumberValidator,
+                                        invalid_message="Por favor digite um número").execute()
+
     escolha = inquirer.select(message="Deseja realmente alterar os dados do anime ?: ",
                               choices=["Sim",
                                        "Não"],
                               validate=EmptyInputValidator,
                               invalid_message="Por favor selecione uma opção").execute()
+
     if escolha == "Sim":
-        cur.execute("UPDATE animes SET anime = ?, episodios = ? WHERE id = ?", (novo_nome, novos_episodios, anime_atual[0]))
+        cur.execute("UPDATE animes SET anime = ?, "
+                    "episodios = ?, "
+                    "genero = ?, "
+                    "ep_atual = ?, "
+                    "visualizador = ? "
+                    "WHERE id = ?",
+                    (novo_nome,
+                     novos_episodios,
+                     novo_genero_formatado,
+                     novo_episodio_atual,
+                     visualizador_split[0][:-1],
+                     anime_atual[0]))
     else:
         print("Operação cancelada")
     commit()
