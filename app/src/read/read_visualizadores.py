@@ -6,6 +6,11 @@ def read_visualizadores():
     cur.execute('SELECT * FROM visualizadores')
 
     resultados = cur.fetchall()
-    
+    print("=" * 40)
     for visualizador in resultados:
-        print(visualizador)
+            id, nome, idade = visualizador
+
+            print(f"Nome: {nome}")
+            print(f"ID: {id}")
+            print(f"Idade: {idade}")
+            print("=" * 40)  # Linha divisória para separar os visualizadores
