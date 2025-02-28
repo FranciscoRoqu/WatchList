@@ -6,6 +6,7 @@ from InquirerPy.validator import EmptyInputValidator
 
 
 def create_tabelas():
+    """Criar as tabelas na base de dados"""
     create_animes()
     create_visualizadores()
 create_tabelas()
@@ -53,9 +54,17 @@ while True:
                 case "Anime":
                     delete_animes() 
                 case "Tudo":
-                    drop_animes()
-                    drop_visualizadores()
-                    create_tabelas()
+                    escolha = inquirer.select(message="Deseja realmente apagar todos os dados de todas as tabelas: ",
+                                    choices=["Sim",
+                                             "Não"],
+                                    validate=EmptyInputValidator,
+                                    invalid_message="Por favor selecione uma opção")
+                    if escolha == "Sim":
+                        drop_animes()
+                        drop_visualizadores()
+                        create_tabelas()
+                    else:
+                        print("A cancelar...")
         case "Atualizar":
             match answerInput:  
                 case "Visualizador":
