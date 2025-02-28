@@ -64,7 +64,7 @@ while True:
                         drop_visualizadores()
                         create_tabelas()
                     else:
-                        print("A cancelar...")
+                        print("Operação cancelada")
         case "Atualizar":
             match answerInput:  
                 case "Visualizador":
