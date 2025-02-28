@@ -4,7 +4,44 @@ from InquirerPy.base.control import Choice
 from InquirerPy.separator import Separator
 from InquirerPy.validator import EmptyInputValidator
 
-
+generos = [
+        "Romance",
+        "Isekai",
+        "Comédia",
+        "Aventura",
+        "Ação",
+        "Drama",
+        "Mecha",
+        "Desporto",
+        "Terror",
+        "Fantasia",
+        "Shounen",
+        "Shoujo",
+        "Seinen",
+        "Josei",
+        "Psicológico",
+        "Sobrenatural",
+        "Histórico",
+        "Ecchi",
+        "Harem",
+        "Yuri",
+        "Yaoi",
+        "Música",
+        "Gore",
+        "Tragédia",
+        "Sci-Fi",
+        "Artes Marciais",
+        "Paródia",
+        "Militar",
+        "Sobrevivência",
+        "Mistério",
+        "Escola",
+        "Viagem no tempo"
+    ]
+generos.sort()
+with open("generos.txt", "w") as ficheiro:
+    for genero in generos:
+        ficheiro.writelines(genero + ",")
 def create_tabelas():
     """Criar as tabelas na base de dados"""
     create_animes()
