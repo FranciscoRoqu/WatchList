@@ -2,7 +2,7 @@ def insert_visualizador():
     from InquirerPy import inquirer
     from InquirerPy.validator import NumberValidator
     from InquirerPy.validator import EmptyInputValidator
-    from src.connection import cursor,commit,close
+    from src.connection import cursor,commit
     cur = cursor()
 
     nome = inquirer.text(message="Introduza o nome do visualizador: ", validate=EmptyInputValidator(message="Por fazor introduza um valor")).execute()
@@ -11,4 +11,3 @@ def insert_visualizador():
     cur.execute("INSERT INTO visualizadores (nome_visualizador, idade_visualizador) VALUES (?, ?)", (nome, idade))
 
     commit()
-    close()
