@@ -1,5 +1,5 @@
 def create_animes():
-    
+    """Cria a tabela de animes"""
     from src.connection import cursor,commit
     
     cur = cursor()

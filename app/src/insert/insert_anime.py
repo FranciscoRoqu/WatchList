@@ -1,4 +1,5 @@
 def insert_anime():
+    """Insere um anime na base de dados"""
     from InquirerPy import inquirer
     from InquirerPy.validator import NumberValidator
     from InquirerPy.validator import EmptyInputValidator

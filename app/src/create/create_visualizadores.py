@@ -1,6 +1,6 @@
 def create_visualizadores():
-    
-    from src.connection import cursor,commit,close
+    """Cria a tabela de visualizadores"""
+    from src.connection import cursor,commit
     cur = cursor()
     
     cur.execute('''
