@@ -11,48 +11,20 @@ def insert_anime():
         print("   É necessário existir pelo menu 1 visualizador para poder criar um anime")
         return
     
-    nome = inquirer.text(message="Introduza o nome do anime: ", validate=EmptyInputValidator(message="Por fazor introduza um valor")).execute()
+    nome = inquirer.text(message="Introduza o nome do anime: ",
+                         validate=EmptyInputValidator(message="Por fazor introduza um valor")).execute()
     episodios = inquirer.text(message=f'Introduza o número de episódios que o anime "{nome}" tem: ', validate=NumberValidator(message="Por favor introduza um número")).execute()
-    generos = [
-        "Romance",
-        "Isekai",
-        "Comédia",
-        "Aventura",
-        "Ação",
-        "Drama",
-        "Mecha",
-        "Desporto",
-        "Terror",
-        "Fantasia",
-        "Shounen",
-        "Shoujo",
-        "Seinen",
-        "Josei",
-        "Psicológico",
-        "Sobrenatural",
-        "Histórico",
-        "Ecchi",
-        "Harem",
-        "Yuri",
-        "Yaoi",
-        "Música",
-        "Gore",
-        "Tragédia",
-        "Sci-Fi",
-        "Artes Marciais",
-        "Paródia",
-        "Militar",
-        "Sobrevivência",
-        "Mistério",
-        "Escola",
-        "Viagem no tempo"
-    ]
-    generos.sort()
+    generos = []
+    with open("generos.txt", "r") as ficheiro:
+        generos_total = ficheiro.readline()
+        generos = generos_total.split(",")
+        if generos[len(generos) - 1] == "":
+            generos.pop()
     genero = inquirer.fuzzy(
         message="Selecione os géneros do anime:",
         choices=generos,
         multiselect=True,
-        validate=lambda resultado: len(resultado) >= 1,
+        validate=EmptyInputValidator,
         invalid_message="Por favor selecione um valor",
         instruction="Use as setas para navegar, TAB para selecionar e ENTER para confirmar."
     ).execute()
