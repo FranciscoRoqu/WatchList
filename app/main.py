@@ -2,9 +2,11 @@ from src import *
 from InquirerPy import inquirer
 from InquirerPy.base.control import Choice
 from InquirerPy.separator import Separator
-while True:
+def create_tabelas():
     create_animes()
     create_visualizadores()
+create_tabelas()
+while True:
     input = inquirer.select(message="Escolha um opção: ",
                             choices=[
                                 "Inserir",
@@ -48,6 +50,7 @@ while True:
                 case "Tudo":
                     drop_animes()
                     drop_visualizadores()
+                    create_tabelas()
         case "Atualizar":
             match answerInput:  
                 case "Visualizador":
