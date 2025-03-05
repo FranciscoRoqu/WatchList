@@ -72,7 +72,7 @@ A base de dados SQLite `watchlist.db` consiste nas seguintes tabelas:
    - `genero` (TEXT, Obrigatório)
    - `ep_atual` (INTEGER, Obrigatório) **preenchido automáticamente (não é autoincrementado)**
    - `visualizador` (INTEGER, Obrigatório, Chave estrangeira)
-   - 
+     
 ## Funcionalidades
 
 - **Criação de tabelas:** Cria automaticamente as tabelas `visualizadores` e `animes`, caso ainda não existam.
@@ -142,7 +142,7 @@ Abaixo estão exemplos de consultas realizadas pelos scripts:
    ```sql
    SELECT * FROM animes
    INNER JOIN visualizadores
-   ON animes.visualizador = visualizadores.id; ####################################################
+   ON visualizadores.id = animes.id;
    ```
 
 ## Contribuições
