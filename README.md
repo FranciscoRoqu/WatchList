@@ -142,7 +142,7 @@ Abaixo estão exemplos de consultas realizadas pelos scripts:
    ```sql
    SELECT * FROM animes
    INNER JOIN visualizadores
-   ON visualizadores.id = animes.id;
+   ON visualizadores.id = animes.visualizador;
    ```
 
 ## Contribuições
