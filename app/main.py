@@ -95,7 +95,7 @@ while True:
                                     choices=["Sim",
                                              "Não"],
                                     validate=EmptyInputValidator,
-                                    invalid_message="Por favor selecione uma opção")
+                                    invalid_message="Por favor selecione uma opção").execute
                     if escolha == "Sim":
                         drop_animes()
                         drop_visualizadores()

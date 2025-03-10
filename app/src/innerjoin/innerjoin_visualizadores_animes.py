@@ -3,7 +3,7 @@ def innerjoin_visualizadores_animes():
 
     cur = cursor()
 
-    cur.execute('''SELECT * FROM visualizadores INNER JOIN animes ON visualizadores.id = animes.id''')
+    cur.execute('''SELECT * FROM visualizadores INNER JOIN animes ON visualizadores.id = animes.visualizador''')
 
     resultados = cur.fetchall()
     
